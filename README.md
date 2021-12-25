@@ -2,6 +2,11 @@
 
 ❭ O instalike tem como objetivo curtir fotos de perfis desejados por você, obrigado!
 
+## INSTALANDO DEPENDENCIAS
+
+```
+pip install -r requerimentos.txt
+```
 
 OBS:
 * O INSTALIKEBOT É PRECISO INTERAÇÃO COM O USUARIO VIA TERMINAL/CONSOLE
@@ -20,24 +25,20 @@ apt-get install git -y
 git clone https://github.com/Viniburn/InstaLikeBot.git
 ```
 
-* OBS: caso não tenha o bash instalado, instale:
-
-```
-apt-get install bash
-```
-
-* AO CLONAR O InstaLikeBot EXECUTE O "install.sh"
-
 1. No InstaLikeBot.py, verifique a linha 28 e 38 e defina seu usuário e senha
 
-```
-bash install.sh
-```
 
 * SE A INSTALAÇÃO FOR BEM SUCEDIDA, EXECUTE O InstaLikeBot
 
+```Linux```
 ```
 python3 InstaLikeBot.py
+```
+
+```Windows```
+
+```
+./InstaLikeBot.py
 ```
 
 # INSTALANDO PARA WINDOWS
@@ -55,9 +56,5 @@ https://chocolatey.org/
 https://gitforwindows.org/
 
 * AO BAIXAR TODAS AS DEPENDÊNCIAS, EXECUTE NO POWERSHELL:
-
-```
-./InstaLikeBot.py
-```
 
 OBS: Verifique a linha 28 e 38 e defina seu usuário e senha
