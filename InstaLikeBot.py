@@ -26,7 +26,7 @@ class InstaLikeBot:
         os.system(limpar)
 
     def Usuario(self):
-        user = '' #seu usuario
+        user = 'vinnybrunn00' #seu usuario
         usuario = self.firefox.find_element_by_name('username')
         usuario.click()
         usuario.send_keys(user)
@@ -36,7 +36,7 @@ class InstaLikeBot:
             f"\nUSUARIO: {user}")
 
     def Senha(self):
-        passwd = '' #sua senha
+        passwd = '22v12g25j' #sua senha
         senha = self.firefox.find_element_by_name('password')
         senha.click()
         senha.send_keys(passwd)
@@ -56,11 +56,11 @@ class InstaLikeBot:
         #os.system(limpar)
 
     def Perfil_Desejado(self):
-        luci = input("Digite nome do usuario: ")
-        hastag = f"https://instagram.com/{luci}"
+        tt = input("Digite nome do usuario: ")
+        hastag = f"https://instagram.com/{tt}"
         perfil = self.firefox
         perfil.get(hastag)
-        print(f"\033[1;97mAcessando: {hastag}")
+        print(f"Acessando: [green]{hastag}[/]")
         time.sleep(3)
         os.system(limpar)
 
@@ -69,7 +69,7 @@ class InstaLikeBot:
         time.sleep(3)
 
         while True:
-            print('\033[1;31m+================> INSTALIKEBOT <================+')
+            print('[yellow]+================> INSTALIKEBOT <================+[/]\n')
             curtir_fotos = self.firefox.find_element_by_xpath('/html/body/div[6]/div[3]/div/article/div/div[2]/div/div/div[2]/section[1]/span[1]/button')
             curtir_fotos.click()
             print("[green][+] Foto curtida![/]")
@@ -78,7 +78,7 @@ class InstaLikeBot:
             try:
                 proxima_foto = self.firefox.find_element_by_class_name('l8mY4.feth3')
                 pontos = '...'
-                print("[reed][-]Próxima foto[/]", end='')
+                print("[reed][+]Próxima foto[/]", end='')
                 for i in list(pontos):
                     print(i, end='')
                     sys.stdout.flush()
@@ -89,7 +89,7 @@ class InstaLikeBot:
 
             except:
                 os.system(limpar)
-                print("\n\n[yellow][+]TODAS AS FOTOS CURTIDAS COM SUCESSO[/]")
+                print("\n\n[yellow][+] TODAS AS FOTOS CURTIDAS COM SUCESSO[/]")
                 break
 
 vini = InstaLikeBot()
