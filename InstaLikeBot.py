@@ -1,13 +1,9 @@
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.keys import Keys
-from pyvirtualdisplay import Display
 from rich import print
 import time
 import sys
 import os
-
-tela = Display(visible=0, size=(800, 800))
-tela.start()
 
 limpar = 'cls' if os.name == 'nt' else 'clear'
 os.system(limpar)
@@ -102,5 +98,3 @@ vini.Usuario()
 vini.Senha()
 vini.Perfil_Desejado()
 vini.Clickar_na_foto()
-
-tela.stop()
