@@ -1,5 +1,6 @@
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.keys import Keys
+from pyvirtualdisplay import Display
 from rich import print
 import time
 import sys
