@@ -1,5 +1,6 @@
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.keys import Keys
+from rich import print
 import time
 import sys
 import os
@@ -72,15 +73,15 @@ class InstaLikeBot:
 
         while True:
             print('\033[1;31m+================> INSTALIKEBOT <================+')
-            curtir_fotos = self.firefox.find_element_by_xpath('/html/body/div[6]/div[2]/div/article/div[3]/section[1]/span[1]/button/div')
+            curtir_fotos = self.firefox.find_element_by_xpath('/html/body/div[6]/div[3]/div/article/div/div[2]/div/div/div[2]/section[1]/span[1]/button')
             curtir_fotos.click()
-            print("\033[1;33m\nFoto curtida!")
+            print("[green][+] Foto curtida![/]")
             time.sleep(3)
 
             try:
-                proxima_foto = self.firefox.find_element_by_class_name('_65Bje.coreSpriteRightPaginationArrow')
+                proxima_foto = self.firefox.find_element_by_class_name('l8mY4.feth3')
                 pontos = '...'
-                print("\nPróxima foto", end='')
+                print("[reed][-]Próxima foto[/]", end='')
                 for i in list(pontos):
                     print(i, end='')
                     sys.stdout.flush()
@@ -91,7 +92,7 @@ class InstaLikeBot:
 
             except:
                 os.system(limpar)
-                print("\n\nTODAS AS FOTOS CURTIDAS COM SUCESSO")
+                print("\n\n[yellow][+]TODAS AS FOTOS CURTIDAS COM SUCESSO[/]")
                 break
 
 vini = InstaLikeBot()
