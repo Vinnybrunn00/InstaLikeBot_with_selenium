@@ -26,7 +26,7 @@ class InstaLikeBot:
         os.system(limpar)
 
     def Usuario(self):
-        user = 'vinnybrunn00' #seu usuario
+        user = '' #seu usuario
         usuario = self.firefox.find_element_by_name('username')
         usuario.click()
         usuario.send_keys(user)
@@ -36,7 +36,7 @@ class InstaLikeBot:
             f"\nUSUARIO: {user}")
 
     def Senha(self):
-        passwd = '22v12g25j' #sua senha
+        passwd = '' #sua senha
         senha = self.firefox.find_element_by_name('password')
         senha.click()
         senha.send_keys(passwd)
