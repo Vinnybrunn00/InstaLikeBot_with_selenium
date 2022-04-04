@@ -11,13 +11,15 @@ os.system(limpar)
 class InstaLikeBot:
     def __init__(self):
         self.firefox = Firefox()
+        self.url = 'https://instagram.com'
+        self.user = '' # seu usuario
+        self.passwd = '' #sua senha
 
     def Abrir_Navegador(self):
-        url = 'https://instagram.com'
         navegador = self.firefox
-        navegador.get(url)
+        navegador.get(self.url)
         qq = '...'
-        print(f"{url}", end='')
+        print(f"{self.url}", end='')
         for l in list(qq):
             print(l, end='')
             sys.stdout.flush()
@@ -26,23 +28,21 @@ class InstaLikeBot:
         os.system(limpar)
 
     def Usuario(self):
-        user = '' #seu usuario
         usuario = self.firefox.find_element_by_name('username')
         usuario.click()
-        usuario.send_keys(user)
+        usuario.send_keys(self.user)
         print(
             'DADOS DO INSTAGRAM'
             '\n\n=========================='
-            f"\nUSUARIO: {user}")
+            f"\nUSUARIO: {self.user}")
 
     def Senha(self):
-        passwd = '' #sua senha
         senha = self.firefox.find_element_by_name('password')
         senha.click()
-        senha.send_keys(passwd)
+        senha.send_keys(self.passwd)
         senha.send_keys(Keys.RETURN)
         print(
-            f"SENHA: {passwd}"
+            f"SENHA: {self.passwd}"
             '\n==========================\n')
         vl = '...'
         print("Entrando", end='')
