@@ -6,6 +6,7 @@ from rich import print
 import time
 import sys
 import os
+import requests
 
 #value = 0
 
@@ -22,9 +23,9 @@ class InstaLikeBot:
         self.firefox = Firefox()
         self.console = Console()
         self.url = 'https://instagram.com'
-        self.user = '' # user
-        self.passwd = '' # password
-        self.profile = '' # desired profile
+        self.user = 'vinnybrunn00' # user
+        self.passwd = '22v12g25j' # password
+        self.profile = 'tntsportsbr' # desired profile
 
         if self.user == "":
             print('[?] - The USER field is empty!')
@@ -74,16 +75,18 @@ class InstaLikeBot:
             ==========================================
             ''')
 
-        with self.console.status('logging in...') as void:
+        with self.console.status('logging in...'):
             time.sleep(3)
         #os.system(clean)
 
         try:
             hastag = f"https://instagram.com/{self.profile}"
+            code = requests.get(hastag)
+            print(f'Status Code > [green]{code.status_code}[/]')
             profile = self.firefox
             profile.get(hastag)
-            with self.console.status(f"Accessing: [green]{hastag}...[/]") as void:
-                time.sleep(3)
+            with self.console.status(f"Accessing: [green]{hastag}...[/]"):
+                time.sleep(10)
             os.system(clean)
         except:
             print('Senha incorreta, tente novamente')
@@ -92,25 +95,24 @@ class InstaLikeBot:
     def Click_On_Photo(self):
         print(style)
         try:
-            click = self.firefox.find_element_by_class_name('_aagu')
+            click = self.firefox.find_element_by_class_name('_aagw')
             click.click()
             time.sleep(3)
 
         except:
             print('[!] - Element not found, or unexpected error')
             quit()
-            sys.exit()
 
         while True:
-            #value =+ 1 
-            like_photos = self.firefox.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[1]/span[1]/button')
+            value =+ 1 
+            like_photos = self.firefox.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[1]/span[1]/button')
             like_photos.click()
             print("[green][+] Liked photo! :heavy_check_mark:[/]")
             time.sleep(3)
 
             try:
-                next_picture = self.firefox.find_element_by_class_name('_aaqg')
-                with self.console.status('Next photo...') as void:
+                next_picture = self.firefox.find_element_by_class_name('_aaqg._aaqh')
+                with self.console.status('Next photo...'):
                     next_picture.click()
                     time.sleep(2)
                 os.system(clean)
@@ -118,7 +120,7 @@ class InstaLikeBot:
             except:
                 os.system(clean)
                 print("\n\n[yellow][!] All photos successfully liked! :heavy_check_mark:[/]")
-                #print(f'[+] Total de fotos curtidas: {value}')
+                print(f'[+] Total de fotos curtidas: {value}')
                 self.firefox.quit()
                 break
 
